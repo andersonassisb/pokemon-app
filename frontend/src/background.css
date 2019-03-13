@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url("/halloween_loading.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*background-image: linear-gradient(
+    to right top,
+    #31353b,
+    #2f3d54,
+    #2e456d,
+    #314c86,
+    #3b519f
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+*/
+.loading {
+  max-width: 320px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 90vw;
+  margin-left: 35px;
+}

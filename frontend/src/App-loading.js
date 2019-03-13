@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.getPokemons(), 1500);
+    this.getPokemons();
   }
 
   filterList = e => {
@@ -38,24 +38,7 @@ class App extends Component {
   render() {
     const { pokemons, filteredPokemons } = this.state;
 
-    return pokemons.length === 0 ? (
-      <Loading />
-    ) : (
-      <React.Fragment>
-        <div className="fixed">
-          <Header title="Pokélab" />
-          <Search handleChange={e => this.filterList(e)} />
-        </div>
-
-        <div className="list">
-          <NotFound show={filteredPokemons.length === 0 && true} />
-
-          <Pokemons
-            list={filteredPokemons.length >= 0 ? filteredPokemons : pokemons}
-          />
-        </div>
-      </React.Fragment>
-    );
+    return <Loading />;
   }
 }
 
