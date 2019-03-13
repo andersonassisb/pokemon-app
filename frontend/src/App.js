@@ -9,11 +9,12 @@ import Pokemons from "./components/pokemons";
 class App extends Component {
   state = {
     pokemons: [],
-    filteredPokemons: false
+    filteredPokemons: false,
+    selectedPokemon: []
   };
 
   getPokemons = () => {
-    fetch("http://localhost:3030/pokemons")
+    fetch("http://172.16.7.133:3030/pokemons")
       .then(response => response.json())
       .then(pokemons => this.setState({ pokemons }));
   };
@@ -25,7 +26,7 @@ class App extends Component {
   filterList = e => {
     if (e.target.value.length > 2) {
       const filteredPokemons = this.state.pokemons.filter(pokemon =>
-        pokemon.name.toLowerCase().match(e.target.value)
+        pokemon.name.toLowerCase().match(e.target.value.toLowerCase())
       );
       this.setState({ filteredPokemons });
     } else {
@@ -38,15 +39,18 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header title="Pokélab" />
+        <div className="fixed">
+          <Header title="Pokélab" />
+          <Search handleChange={e => this.filterList(e)} />
+        </div>
 
-        <Search handleChange={e => this.filterList(e)} />
+        <div className="list">
+          <NotFound show={filteredPokemons.length === 0 && true} />
 
-        <NotFound show={filteredPokemons.length === 0 && true} />
-
-        <Pokemons
-          list={filteredPokemons.length >= 0 ? filteredPokemons : pokemons}
-        />
+          <Pokemons
+            list={filteredPokemons.length >= 0 ? filteredPokemons : pokemons}
+          />
+        </div>
       </React.Fragment>
     );
   }

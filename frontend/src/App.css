@@ -2,13 +2,27 @@
   font-family: "Press Start 2P", cursive;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.list {
+  margin-top: 95px;
+}
+
 .form-group,
 .table {
   margin-bottom: 0;
 }
 
-td {
-  /*border: 1px solid #000 !important;*/
+/*td {
+  border: 1px solid #000 !important;
+}*/
+
+.name {
+  font-size: 3.3vw;
 }
 
 .p {
@@ -16,12 +30,37 @@ td {
   padding: 0;
 }
 
+.fix-size {
+  max-width: 96px;
+  width: 100%;
+}
+
+.badge {
+  font-size: 2.5vw;
+}
+
+.pokemon-name {
+  align-content: center;
+  max-width: 110px;
+}
+
 .pokemon-image {
-  width: 60px;
+  max-width: 60px;
+  align-self: center;
+}
+
+.pokemon-content-type {
+  align-self: center;
+  width: 110px;
+  text-align: center;
+  font-size: 3.3vw;
+  border-radius: 3;
+  color: seashell;
 }
 
 .pokemon-type {
   width: 110px;
+  align-self: left;
 }
 
 .form-control,
