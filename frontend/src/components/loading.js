@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../background.css";
 
 /* Loading Pokemons */
-import Eevee from "../loading-images/eevee.gif";
+//import Eevee from "../loading-images/eevee.gif";
 import Flareon from "../loading-images/flareon.gif";
 import Jolteon from "../loading-images/jolteon.gif";
 import Umbreon from "../loading-images/umbreon.gif";
