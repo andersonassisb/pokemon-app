@@ -15,7 +15,7 @@ const Modal = props => {
           <div className="modal-header">
             {props.pokemon && (
               <h5 className="modal-title" id="exampleModalLabel">
-                {"#00" + props.pokemon.number + " " + props.pokemon.name}
+                {"#" + props.pokemon.number + " " + props.pokemon.name}
               </h5>
             )}
             <button
