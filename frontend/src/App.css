@@ -18,7 +18,8 @@
 }
 .about-align-left {
   font-size: 2.5vw;
-  text-align: left;
+  text-align: center;
+  max-width: 105px;
 }
 
 .fixed {
