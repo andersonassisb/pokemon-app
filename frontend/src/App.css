@@ -2,6 +2,25 @@
   font-family: "Press Start 2P", cursive;
 }
 
+.style-about {
+  color: #ffffff;
+  background-color: #6890f0;
+  margin-top: 0;
+  align-self: center;
+  width: 110px;
+  text-align: center;
+  font-size: 2.5vw;
+  border-radius: 3;
+}
+.about-align-center {
+  font-size: 2.5vw;
+  text-align: center;
+}
+.about-align-left {
+  font-size: 2.5vw;
+  text-align: left;
+}
+
 .fixed {
   position: fixed;
   top: 0;
@@ -54,7 +73,7 @@
   align-self: center;
   width: 110px;
   text-align: center;
-  font-size: 3.3vw;
+  font-size: 2.5vw;
   border-radius: 3;
   color: seashell;
 }

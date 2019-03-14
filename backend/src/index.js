@@ -2,6 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
 const url =
   process.env.MONGO_URL ||
@@ -11,6 +13,46 @@ const url =
 app.use(cors());
 
 app.get('/', (req, res) => res.json({ api_version: '1.0.0' }));
+
+app.get('/info/:pokemon_name', async (req, res) => {
+  try {
+    const pokemonName = req.params.pokemon_name;
+
+    const dom = await JSDOM.fromURL(
+      `https://www.pokemon.com/br/pokedex/${pokemonName}`
+    );
+
+    const about = dom.window.document
+      .querySelectorAll('.version-x')[0]
+      .textContent.trim();
+
+    const height = dom.window.document
+      .querySelectorAll('.attribute-value')[0]
+      .textContent.trim();
+
+    const weight = dom.window.document
+      .querySelectorAll('.attribute-value')[1]
+      .textContent.trim();
+
+    const category = dom.window.document
+      .querySelectorAll('.attribute-value')[3]
+      .textContent.trim();
+
+    const skill = dom.window.document
+      .querySelectorAll('.attribute-value')[4]
+      .textContent.trim();
+
+    res.json({
+      about,
+      height,
+      weight,
+      category,
+      skill
+    });
+  } catch (err) {
+    res.json({ error: 'pokemon not found' });
+  }
+});
 
 app.get('/pokemons', async (req, res) => {
   const pokemons = await db

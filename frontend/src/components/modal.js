@@ -27,15 +27,58 @@ const Modal = props => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          {props.pokemon &&
-            props.pokemon.type.map(type => (
-              <div
-                key={type}
-                className={`badge pokemon-content-type ${type.toLowerCase()}`}
-              >
-                {type}
-              </div>
-            ))}
+          <table className="about-content">
+            <tbody>
+              <tr>
+                <td>
+                  <p className="style-about">About:</p>
+                  <p className="about-align-center">
+                    {props.info.about && props.info.about}
+                  </p>
+                </td>
+                <td>
+                  <p className="style-about">Category:</p>
+                  <p className="about-align-center">
+                    {props.info.category && props.info.category}
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p className="style-about">Height:</p>
+                  <p className="about-align-left">
+                    {props.info.height && props.info.height}
+                  </p>
+                </td>
+                <td>
+                  <p className="style-about">Weight:</p>
+                  <p className="about-align-center">
+                    {props.info.weight && props.info.weight}
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p className="style-about">Skill:</p>
+                  <p className="about-align-left">
+                    {props.info.skill && props.info.skill}
+                  </p>
+                </td>
+                <td>
+                  <p className="style-about about-align-center">Types:</p>
+                  {props.pokemon &&
+                    props.pokemon.type.map(type => (
+                      <div
+                        key={type}
+                        className={`pokemon-content-type ${type.toLowerCase()}`}
+                      >
+                        {type}
+                      </div>
+                    ))}
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div className="modal-footer">
             <button
               type="button"
