@@ -41,13 +41,18 @@ app.get('/info/:pokemon_name', async (req, res) => {
     const skill = dom.window.document
       .querySelectorAll('.attribute-value')[4]
       .textContent.trim();
+    
+      const img = dom.window.document
+      .querySelectorAll('.profile-images')[0].firstElementChild.src;
+
 
     res.json({
       about,
       height,
       weight,
       category,
-      skill
+      skill, 
+      img
     });
   } catch (err) {
     res.json({ error: 'pokemon not found' });

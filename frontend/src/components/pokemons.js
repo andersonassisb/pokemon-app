@@ -21,7 +21,7 @@ class Pokemons extends Component {
     //console.log(selectPokemonFixName);
 
     if (selectPokemon) {
-      fetch(`http://172.16.7.133:3030/info/${selectPokemonFixName}`)
+      fetch(`http://192.168.1.3:3030/info/${selectPokemonFixName}`)
         .then(response => response.json())
         .then(info => this.setState({ selectPokemon, info }));
     }

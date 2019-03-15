@@ -27,8 +27,9 @@ const Modal = props => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <div className="about-align-center"><img className="about-align-center img-style-about" src={`${props.info.img && props.info.img}`} alt={1}></img></div> 
           <table className="about-content">
-            <tbody>
+            <tbody>                                     
               <tr>
                 <td>
                   <p className="style-about">About:</p>

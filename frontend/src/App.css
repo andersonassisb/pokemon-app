@@ -10,9 +10,14 @@
   font-size: 5vw;
 }
 
+.img-style-about {
+  align-items: center;
+  width: 180px;
+}
+
 .style-about {
   color: #ffffff;
-  background-color: #6890f0;
+  background-color: #074949;
   margin-top: 0;
   align-self: center;
   width: 110px;

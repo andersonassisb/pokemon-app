@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   getPokemons = () => {
-    fetch("http://172.16.7.133:3030/pokemons")
+    fetch("http://192.168.1.3:3030/pokemons")
       .then(response => response.json())
       .then(pokemons => this.setState({ pokemons }));
   };
